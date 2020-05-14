@@ -69,7 +69,7 @@ Vamos a utilizar los 10 sw que trae la FPGA virtual por defecto utilizamos “V_
 ```verilog
 module BancoRegistro #(      		 //   #( Parametros
          parameter BIT_ADDR = 8,  //   BIT_ADDR Número de bit para la dirección
-         parameter BIT_DATO = 4,  //  BIT_DATO  Número de bit para el dato
+         parameter BIT_DATO = 4  //  BIT_DATO  Número de bit para el dato
         // No realizo paramitrezacion ya que veo que es mas complejo y no entiendo unas variables del programa
 			)
 	(/*
@@ -164,7 +164,7 @@ A continuación, encontraran el código completo que se implementó para el Banc
 ```verilog
 module BancoRegistro #(      		 //   #( Parametros
          parameter BIT_ADDR = 8,  //   BIT_ADDR Número de bit para la dirección
-         parameter BIT_DATO = 4,  //  BIT_DATO  Número de bit para el dato
+         parameter BIT_DATO = 4  //  BIT_DATO  Número de bit para el dato
         // No realizo paramitrezacion ya que veo que es mas complejo y no entiendo unas variables del programa
 			)
 	(/*
