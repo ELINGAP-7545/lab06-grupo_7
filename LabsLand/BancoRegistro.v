@@ -1,4 +1,3 @@
-
 module BancoRegistro #(      		 //   #( Parametros
          parameter BIT_ADDR = 8,  //   BIT_ADDR Número de bit para la dirección
          parameter BIT_DATO = 4,  //  BIT_DATO  Número de bit para el dato
@@ -22,7 +21,6 @@ module BancoRegistro #(      		 //   #( Parametros
     input G_CLOCK_50,
     input [1:0] V_BT);
     
-
 // Aignacion de reloj
 wire clk;
 assign clk = G_CLOCK_50;
@@ -56,7 +54,6 @@ assign datW = V_SW [9:6];
 wire [6:0] datOutRa;
 wire [6:0] datOutRb;
 
-
 // La cantdiad de registros es igual a: 
 localparam NREG = 2 ** BIT_ADDR; //no entiendo que hace esta linea ??????????????????????
   
@@ -71,8 +68,6 @@ always @(posedge clk) begin
 	if (RegWrite == 1)
      breg[addrW] <= datW;
   end
-
-
 
 //instancia de display
 BCDtoSSeg d2(.V_SW1(datOutRa), .G_HEX(G_HEX0));

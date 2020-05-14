@@ -280,4 +280,13 @@ end
 
 endmodule
 ```
+## Sinterización y simulación 
 
+En esta parte ya no tenemos problemas con la sinterización y podemos pasar a simular en la FPGA virtual
+
+![caja](https://github.com/ELINGAP-7545/lab06-grupo_7/blob/master/Img/sintetizar.png)
+
+
+Realizamos la simulación, no entiendo cómo debería ser el funcionamiento de para poder lograr la simulación y entenderla, esta pregunta se le realizara al profesor en la entrega del laboratorio.
+
+![caja](https://github.com/ELINGAP-7545/lab06-grupo_7/blob/master/Img/br1.png)
