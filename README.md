@@ -47,9 +47,19 @@ Entregables:
 
 # Implementación en LabsLand
 
-Principal
+### Asignacion de variable
 
 Principalmente se realiza la asignación para la cantidad de bist que tendrá cada registro como se muestra en la siguiente tabla se asigna la distribución que se verá en la FPGA:
 
 
-![caja]()
+![caja](https://github.com/ELINGAP-7545/lab06-grupo_7/blob/master/Img/Asig.jpeg)
+
+Adaptación de código a LabsLand
+
+Vamos a utilizar los 10 sw que trae la FPGA virtual por defecto utilizamos “V_SW”, 2 botones de “V_BT” para asignarlos a Reg de escritura y el reset, como salidas pondremos dos displays “G_HEX0” y “G_HEX1”, por ultimo la entrada de reloj “G_CLOCK50”.
+
+```verilog
+
+
+
+```
