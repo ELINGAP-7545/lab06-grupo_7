@@ -1,5 +1,12 @@
 # lab06 Diseño de banco de Registro
 
+## Grupo 7
+
+### Integrantes
+
+Juan David Sandoval Suárez - 39718
+
+
 # Introducción
 
 
@@ -38,3 +45,11 @@ Entregables:
 
  ![caja](https://github.com/Fabeltranm/SPARTAN6-ATMEGA-MAX5864/blob/master/lab/lab07-BancosRgistro/doc/banco%20registro.png)
 
+# Implementación en LabsLand
+
+Principal
+
+Principalmente se realiza la asignación para la cantidad de bist que tendrá cada registro como se muestra en la siguiente tabla se asigna la distribución que se verá en la FPGA:
+
+
+![caja]()
