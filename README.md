@@ -1,4 +1,4 @@
-# lab06 Diseño de banco de Registro
+# Laboratorio #6 Diseño de Banco de Registro
 
 ## Grupo 7
 
@@ -6,8 +6,9 @@
 
 Juan David Sandoval Suárez - 39718
 
-
 Bryan Daniel Melo Guzman - 49686
+
+Fabian Santiago Martin Morantes - 60821
 
 # Introducción
 
