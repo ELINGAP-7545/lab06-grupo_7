@@ -59,7 +59,28 @@ Adaptación de código a LabsLand
 Vamos a utilizar los 10 sw que trae la FPGA virtual por defecto utilizamos “V_SW”, 2 botones de “V_BT” para asignarlos a Reg de escritura y el reset, como salidas pondremos dos displays “G_HEX0” y “G_HEX1”, por ultimo la entrada de reloj “G_CLOCK50”.
 
 ```verilog
-
+module BancoRegistro  #( Parametros
+         parameter BIT_ADDR = 8,  //   BIT_ADDR Número de bit para la dirección
+         parameter BIT_DATO = 4,  //  BIT_DATO  Número de bit para el dato
+        // No realizo paramitrezacion ya que veo que es mas complejo y no entiendo unas variables del programa
+			)
+	(/*
+    input [BIT_ADDR-1:0] addrRa, dado que BIT_ADDR esta parametrizado con el numereo 8 y le resto 1 queda un 7 a 0 igual a 8 bits
+    input [BIT_ADDR-1:0] addrRb, lo mismo 8bits
+    
+	 output [BIT_DATO-1:0] datOutRa, BIT_DATO 
+    output [BIT_DATO-1:0] datOutRb,
+    
+	 input [BIT_ADDR:0] addrW,
+    input [BIT_DATO-1:0] datW,
+    */
+	 //input RegWrite,
+    output [6:0]G_HEX0,
+    output [6:0]G_HEX1,
+    input [9:0] V_SW,
+    //input clk,
+    input G_CLOCK_50,
+    input [1:0] V_BT);
 
 
 ```
