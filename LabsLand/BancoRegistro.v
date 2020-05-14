@@ -1,10 +1,10 @@
 
-module BancoRegistro (/*#(      		 //   #( Parametros
+module BancoRegistro #(      		 //   #( Parametros
          parameter BIT_ADDR = 8,  //   BIT_ADDR Número de bit para la dirección
          parameter BIT_DATO = 4,  //  BIT_DATO  Número de bit para el dato
          No realizo paramitrezacion ya que veo que es mas complejo 
 			parameter   RegFILE= "src/Reg16.men")
-	(
+	(/*
     input [BIT_ADDR-1:0] addrRa, dado que BIT_ADDR esta parametrizado con el numereo 8 y le resto 1 queda un 7 a 0 igual a 8 bits
     input [BIT_ADDR-1:0] addrRb, lo mismo 8bits
     
@@ -58,7 +58,7 @@ wire [6:0] datOutRb;
 
 
 // La cantdiad de registros es igual a: 
-localparam NREG = 2 ** BIT_ADDR;
+localparam NREG = 2 ** BIT_ADDR; //no entiendo que hace esta linea ??????????????????????
   
 //configiración del banco de registro 
 reg [BIT_DATO-1: 0] breg [NREG-1:0];
