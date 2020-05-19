@@ -67,12 +67,19 @@ assign  datOutRb = breg[addrRb];
 always @(posedge clk) begin
 	if (RegWrite == 1)
      breg[addrW] <= datW;
-  if (rst==1)
-    breg[addrW] <= datW;
 
+  if (rst == 1)//reset
+     breg[2'b00] <= 0;
+    if (rst == 1)
+     breg[2'b01] <= 0;
+      if (rst == 1)
+        breg[2'b10] <= 0;
+          if (rst == 1)
+            breg[2'b11] <= 0;
   end
 
 //instancia de display
+
 BCDtoSSeg d2(.V_SW1(datOutRa), .G_HEX(G_HEX0));
 BCDtoSSeg d3(.V_SW1(datOutRb), .G_HEX(G_HEX1));
 
