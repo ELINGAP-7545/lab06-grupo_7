@@ -35,24 +35,24 @@ assign rst = V_BT[0];
 wire RegWrite;
 assign RegWrite = V_BT[1];
 
-//Número de bit para la dirección
+//Número de bit para la dirección y asignacion
 
-wire [1:0] addrRa;
+wire [BIT_ADDR-1:0] addrRa;
 assign addrRa =V_SW[1:0];
 
-wire [1:0] addrRb;
+wire [BIT_ADDR-1:0] addrRb;
 assign addrRb=V_SW[3:2];
 
-wire [1:0] addrW;
+wire [BIT_ADDR-1:0] addrW;
 assign addrW = V_SW[5:4];
 
-wire [3:0]datW;
+wire [BIT_DATO-1:0]datW;
 assign datW = V_SW [9:6];
 
 //output displays
 
-wire [3:0] datOutRa;
-wire [3:0] datOutRb;
+wire [BIT_DATO-1:0] datOutRa;
+wire [BIT_DATO-1:0] datOutRb;
 
 // La cantdiad de registros es igual a: 
 localparam NREG = 2 ** BIT_ADDR; //Se encarga de la cantidad de registros
@@ -66,16 +66,16 @@ assign  datOutRb = breg[addrRb];
 
 always @(posedge clk) begin
 	if (RegWrite == 1)
-     breg[addrW] <= datW;
+     breg[addrW] <= datW;//Escritura en banco de registro
 
-  if (rst == 1)//reset
+  if (rst == 1)//reset banco de registros 
      breg[2'b00] <= 0;
-    if (rst == 1)
-     breg[2'b01] <= 0;
       if (rst == 1)
-        breg[2'b10] <= 0;
+        breg[2'b01] <= 0;
           if (rst == 1)
-            breg[2'b11] <= 0;
+            breg[2'b10] <= 0;
+              if (rst == 1)
+                breg[2'b11] <= 0;
   end
 
 //instancia de display
