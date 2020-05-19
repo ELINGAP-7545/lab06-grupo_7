@@ -1,6 +1,6 @@
 module BancoRegistro #(      		 //   #( Parametros
-         parameter BIT_ADDR = 4,  //   BIT_ADDR Número de bit para la dirección
-         parameter BIT_DATO = 2  //  BIT_DATO  Número de bit para el dato
+         parameter BIT_ADDR = 2,  //   BIT_ADDR Número de bit para la dirección
+         parameter BIT_DATO = 4  //  BIT_DATO  Número de bit para el dato
         // No realizo paramitrezacion ya que veo que es mas complejo y no entiendo unas variables del programa
 			)
 	(/*
@@ -55,7 +55,7 @@ wire [3:0] datOutRa;
 wire [3:0] datOutRb;
 
 // La cantdiad de registros es igual a: 
-localparam NREG = 2 ** BIT_ADDR; //no entiendo que hace esta linea ??????????????????????
+localparam NREG = 2 ** BIT_ADDR; //Se encarga de la cantidad de registros
   
 //configiración del banco de registro 
 reg [BIT_DATO-1: 0] breg [NREG-1:0];
