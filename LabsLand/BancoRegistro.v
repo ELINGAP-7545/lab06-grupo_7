@@ -84,4 +84,3 @@ BCDtoSSeg d2(.V_SW1(datOutRa), .G_HEX(G_HEX0));
 BCDtoSSeg d3(.V_SW1(datOutRb), .G_HEX(G_HEX1));
 
 endmodule
-
