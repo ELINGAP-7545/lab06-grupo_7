@@ -51,8 +51,8 @@ assign datW = V_SW [9:6];
 
 //output displays
 
-wire [6:0] datOutRa;
-wire [6:0] datOutRb;
+wire [3:0] datOutRa;
+wire [3:0] datOutRb;
 
 // La cantdiad de registros es igual a: 
 localparam NREG = 2 ** BIT_ADDR; //no entiendo que hace esta linea ??????????????????????
@@ -67,6 +67,9 @@ assign  datOutRb = breg[addrRb];
 always @(posedge clk) begin
 	if (RegWrite == 1)
      breg[addrW] <= datW;
+  if (rst==1)
+    breg[addrW] <= datW;
+
   end
 
 //instancia de display
