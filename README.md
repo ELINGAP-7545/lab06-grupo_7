@@ -28,7 +28,7 @@ Se debe diseñar un banco de registro tal que:
 * Permitir la escritura  de 1 registro, acorde a la señal de control regwrite
 * Contar con señal de rst, la cual  ponga  todos los registros en un valor conocido.
 
-![cn](https://github.com/Fabeltranm/SPARTAN6-ATMEGA-MAX5864/blob/master/lab/lab07-BancosRgistro/doc/caja%20negra.png)
+![caja negra](https://github.com/ELINGAP-7545/lab06-grupo_7/blob/master/Img/caja%20negra.png)
 
 * Visualizar la información, en al menos dos display de 7 segmentos (información de cada registro leído).
 * El ingreso de la información se debe hacer por medio de los interruptores.
@@ -46,6 +46,6 @@ Entregables:
 * Código HDL de la solución.
 .
 
- ![caja](https://github.com/Fabeltranm/SPARTAN6-ATMEGA-MAX5864/blob/master/lab/lab07-BancosRgistro/doc/banco%20registro.png)
+ ![banco registro](https://github.com/ELINGAP-7545/lab06-grupo_7/blob/master/Img/banco%20registro.png)
 
 
