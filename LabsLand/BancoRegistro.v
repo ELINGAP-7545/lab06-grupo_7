@@ -1,6 +1,6 @@
 module BancoRegistro #(      		 //   #( Parametros
-         parameter BIT_ADDR = 8,  //   BIT_ADDR Número de bit para la dirección
-         parameter BIT_DATO = 4  //  BIT_DATO  Número de bit para el dato
+         parameter BIT_ADDR = 4,  //   BIT_ADDR Número de bit para la dirección
+         parameter BIT_DATO = 2  //  BIT_DATO  Número de bit para el dato
         // No realizo paramitrezacion ya que veo que es mas complejo y no entiendo unas variables del programa
 			)
 	(/*
@@ -37,16 +37,16 @@ assign RegWrite = V_BT[1];
 
 //Número de bit para la dirección
 
-wire addrRa;
+wire [1:0] addrRa;
 assign addrRa =V_SW[1:0];
 
-wire addrRb;
+wire [1:0] addrRb;
 assign addrRb=V_SW[3:2];
 
-wire addrW;
+wire [1:0] addrW;
 assign addrW = V_SW[5:4];
 
-wire datW;
+wire [3:0]datW;
 assign datW = V_SW [9:6];
 
 //output displays
