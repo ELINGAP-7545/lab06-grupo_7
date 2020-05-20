@@ -313,8 +313,6 @@ always @ ( * ) begin
 end
 
 endmodule
-
-endmodule
 ```
 ## Sinterización y simulación 
 
