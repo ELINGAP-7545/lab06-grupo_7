@@ -56,7 +56,7 @@ Entregables:
 Principalmente se realiza la asignación para la cantidad de bist que tendrá cada registro como se muestra en la siguiente tabla se asigna la distribución que se verá en la FPGA:
 
 
-![caja](https://github.com/ELINGAP-7545/lab06-grupo_7/blob/master/Img/Asig.jpeg)
+![caja](https://github.com/ELINGAP-7545/lab06-grupo_7/blob/master/Img/Switches%20Virtuales.jpg)
 
 ## Adaptación de código a LabsLand
 
