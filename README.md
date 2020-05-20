@@ -51,9 +51,9 @@ Entregables:
 
 # Implementación en LabsLand
 
-### Asignacion de variable
+### Asignación de variable
 
-Principalmente se realiza la asignación para la cantidad de bist que tendrá cada registro como se muestra en la siguiente tabla se asigna la distribución que se verá en la FPGA:
+Principalmente se realiza la asignación para la cantidad de bits que tendrá cada registro como se muestra en la siguiente tabla se asigna la distribución que se verá en la FPGA:
 
 
 ![caja](https://github.com/ELINGAP-7545/lab06-grupo_7/blob/master/Img/Switches%20Virtuales.jpg)
@@ -293,21 +293,21 @@ module BCDtoSSeg (V_SW1, G_HEX);
 always @ ( * ) begin
   case (BCD)
     4'b0000: SSeg = 7'b1000000; // "0"  
-	4'b0001: SSeg = 7'b1111001; // "1" 
-	4'b0010: SSeg = 7'b0100100; // "2" 
-	4'b0011: SSeg = 7'b0110000; // "3" 
-	4'b0100: SSeg = 7'b0011001; // "4" 
-	4'b0101: SSeg = 7'b0010010; // "5" 
-	4'b0110: SSeg = 7'b0000010; // "6" 
+	  4'b0001: SSeg = 7'b1111001; // "1" 
+	  4'b0010: SSeg = 7'b0100100; // "2" 
+	  4'b0011: SSeg = 7'b0110000; // "3" 
+	  4'b0100: SSeg = 7'b0011001; // "4" 
+	  4'b0101: SSeg = 7'b0010010; // "5" 
+	  4'b0110: SSeg = 7'b0000010; // "6" 
     4'b0111: SSeg = 7'b1111000; // "7" 
-	4'b1000: SSeg = 7'b0000000; // "8"  
-	4'b1001: SSeg = 7'b0011000; // "9" 
-   4'ha: SSeg = 7'b0001000;  
-   4'hb: SSeg = 7'b0000011;
-   4'hc: SSeg = 7'b0100111;
-   4'hd: SSeg = 7'b0100001;
-   4'he: SSeg = 7'b0000100;
-   4'hf: SSeg = 7'b0001110;
+	  4'b1000: SSeg = 7'b0000000; // "8"  
+	  4'b1001: SSeg = 7'b0011000; // "9" 
+    4'ha: SSeg = 7'b0001000;  
+    4'hb: SSeg = 7'b0000011;
+    4'hc: SSeg = 7'b0100111;
+    4'hd: SSeg = 7'b0100001;
+    4'he: SSeg = 7'b0000100;
+    4'hf: SSeg = 7'b0001110;
     default:
     SSeg = 0;
   endcase
@@ -320,7 +320,6 @@ endmodule
 En esta parte ya no tenemos problemas con la sinterización y podemos pasar a simular en la FPGA virtual
 
 ![caja](https://github.com/ELINGAP-7545/lab06-grupo_7/blob/master/Img/sintetizar.png)
-
 
 Realizamos la simulación, no entiendo cómo debería ser el funcionamiento de para poder lograr la simulación y entenderla, esta pregunta se le realizara al profesor en la entrega del laboratorio.
 
