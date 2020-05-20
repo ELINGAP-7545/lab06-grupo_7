@@ -127,19 +127,21 @@ Wire datW se asignará a V_SW para dos bits los cuales corresponde a [9:6]
 
 //Número de bit para la dirección
 
-wire addrRa;
+wire [1:0] addrRa;
 assign addrRa =V_SW[1:0];
 
-wire addrRb;
+wire [1:0] addrRb;
 assign addrRb=V_SW[3:2];
 
-wire addrW;
+wire [1:0] addrW;
 assign addrW = V_SW[5:4];
 
-wire datW;
+wire [3:0]datW;
 assign datW = V_SW [9:6];
 
 ```
+
+Es importante tener en cuenta la cantidad de wire [N:0] sin esto no funcionaria.
 
 #### Salidas 
 
@@ -149,29 +151,59 @@ Se utilizan dos displays G_HEX0 y GHEX1 de 7 bits cada uno, en este paso debemos
 ```verilog
 //output displays
 
-wire [6:0] datOutRa;
-wire [6:0] datOutRb;
+wire [3:0] datOutRa;
+wire [3:0] datOutRb;
 
 //instancia de display
 BCDtoSSeg d2(.V_SW1(datOutRa), .G_HEX(G_HEX0));
 BCDtoSSeg d3(.V_SW1(datOutRb), .G_HEX(G_HEX1));
 ```
+### reset
+
+Utilizamos un if anidano para que este pase por cada registro y los ponga en 0
+
+```verilog
+
+  if (rst == 1)//reset banco de registros 
+     breg[2'b00] <= 0;
+      if (rst == 1)
+        breg[2'b01] <= 0;
+          if (rst == 1)
+            breg[2'b10] <= 0;
+              if (rst == 1)
+                breg[2'b11] <= 0;
+  end
+
+
+```
+
+
 ## Código Verilog para LabsLand
 
-A continuación, encontraran el código completo que se implementó para el Banco de registro y para los 7 segmentos.
+A continuación, encontraran el código completo que se implementó para el Banco de registro y para los 7 segmentos, Este código ya se encuentra parametrizado.
 
 ### BancoRegistro
 
 ```verilog
+
 module BancoRegistro #(      		 //   #( Parametros
-         parameter BIT_ADDR = 8,  //   BIT_ADDR Número de bit para la dirección
-         parameter BIT_DATO = 4,  //  BIT_DATO  Número de bit para el dato
+         parameter BIT_ADDR = 2,  //   BIT_ADDR Número de bit para la dirección
+         parameter BIT_DATO = 4  //  BIT_DATO  Número de bit para el dato
         // No realizo paramitrezacion ya que veo que es mas complejo y no entiendo unas variables del programa
 			)
-	(
+	(/*
+    input [BIT_ADDR-1:0] addrRa, dado que BIT_ADDR esta parametrizado con el numereo 8 y le resto 1 queda un 7 a 0 igual a 8 bits
+    input [BIT_ADDR-1:0] addrRb, lo mismo 8bits
+    
+	 output [BIT_DATO-1:0] datOutRa, BIT_DATO 
+    output [BIT_DATO-1:0] datOutRb,
+    
+	 input [BIT_ADDR:0] addrW,
+    input [BIT_DATO-1:0] datW,
+    */
 	 //input RegWrite,
-    output [6:0]G_HEX0,
-    output [6:0]G_HEX1,
+    output [6:0]G_HEX2,
+    output [6:0]G_HEX3,
     input [9:0] V_SW,
     //input clk,
     input G_CLOCK_50,
@@ -191,27 +223,27 @@ assign rst = V_BT[0];
 wire RegWrite;
 assign RegWrite = V_BT[1];
 
-//Número de bit para la dirección
+//Número de bit para la dirección y asignacion
 
-wire addrRa;
+wire [BIT_ADDR-1:0] addrRa;
 assign addrRa =V_SW[1:0];
 
-wire addrRb;
+wire [BIT_ADDR-1:0] addrRb;
 assign addrRb=V_SW[3:2];
 
-wire addrW;
+wire [BIT_ADDR-1:0] addrW;
 assign addrW = V_SW[5:4];
 
-wire datW;
+wire [BIT_DATO-1:0]datW;
 assign datW = V_SW [9:6];
 
 //output displays
 
-wire [6:0] datOutRa;
-wire [6:0] datOutRb;
+wire [BIT_DATO-1:0] datOutRa;
+wire [BIT_DATO-1:0] datOutRb;
 
 // La cantdiad de registros es igual a: 
-localparam NREG = 2 ** BIT_ADDR; //no entiendo que hace esta linea ??????????????????????
+localparam NREG = 2 ** BIT_ADDR; //Se encarga de la cantidad de registros
   
 //configiración del banco de registro 
 reg [BIT_DATO-1: 0] breg [NREG-1:0];
@@ -222,14 +254,25 @@ assign  datOutRb = breg[addrRb];
 
 always @(posedge clk) begin
 	if (RegWrite == 1)
-     breg[addrW] <= datW;
+     breg[addrW] <= datW;//Escritura en banco de registro
+
+  if (rst == 1)//reset banco de registros 
+     breg[2'b00] <= 0;
+      if (rst == 1)
+        breg[2'b01] <= 0;
+          if (rst == 1)
+            breg[2'b10] <= 0;
+              if (rst == 1)
+                breg[2'b11] <= 0;
   end
 
 //instancia de display
-BCDtoSSeg d2(.V_SW1(datOutRa), .G_HEX(G_HEX0));
-BCDtoSSeg d3(.V_SW1(datOutRb), .G_HEX(G_HEX1));
+
+BCDtoSSeg d2(.V_SW1(datOutRa), .G_HEX(G_HEX2));
+BCDtoSSeg d3(.V_SW1(datOutRb), .G_HEX(G_HEX3));
 
 endmodule
+
 ```
 
 ### BCDtoSSeg
