@@ -138,8 +138,7 @@ Es importante tener en cuenta la cantidad de wire [N:0], ya que sin esto no func
 
 #### Salidas 
 
-Se utilizan dos displays G_HEX0 y GHEX1 de 7 bits cada uno, en este paso debemos realizar una instanciación llamando BDCtoSSeg
-
+Se utilizan dos displays "G_HEX0" y "GHEX1" de 7 bits cada uno, en este paso debemos realizar una instanciación llamando BDCtoSSeg
 
 ```verilog
 //output displays
@@ -151,9 +150,9 @@ wire [3:0] datOutRb;
 BCDtoSSeg d2(.V_SW1(datOutRa), .G_HEX(G_HEX0));
 BCDtoSSeg d3(.V_SW1(datOutRb), .G_HEX(G_HEX1));
 ```
-### reset
+### Reset
 
-Utilizamos un if anidano para que este pase por cada registro y los ponga en 0
+Utilizamos un if anidado para que este pase por cada registro y los ponga en 0
 
 ```verilog
 
@@ -167,15 +166,13 @@ Utilizamos un if anidano para que este pase por cada registro y los ponga en 0
                 breg[2'b11] <= 0;
   end
 
-
 ```
-
 
 ## Código Verilog para LabsLand
 
-A continuación, encontraran el código completo que se implementó para el Banco de registro y para los 7 segmentos, Este código ya se encuentra parametrizado.
+A continuación, encontraran el código completo que se implementó para el Banco de registro y para los 7 segmentos, este código ya se encuentra parametrizado.
 
-### BancoRegistro
+### Banco de Registro
 
 ```verilog
 
@@ -268,7 +265,7 @@ endmodule
 
 ```
 
-### BCDtoSSeg
+### Display o BCDtoSSeg
 
 ```verilog
 module BCDtoSSeg (V_SW1, G_HEX);
