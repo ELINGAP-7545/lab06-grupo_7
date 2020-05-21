@@ -48,6 +48,25 @@ Entregables:
 
  ![banco registro](https://github.com/ELINGAP-7545/lab06-grupo_7/blob/master/Img/banco%20registro.png)
 
+# Implementación en Quartus
+
+## Código Banco de Registro
+
+```verilog
+
+
+```
+
+## TestBench
+
+```verilog
+
+
+```
+
+## Simulación en Quartus 
+
+
 
 # Implementación en LabsLand
 
@@ -304,7 +323,7 @@ end
 
 endmodule
 ```
-## Sinterización y simulación 
+## Sintetización y simulación 
 
 En esta parte ya no tenemos problemas con la sinterización y podemos pasar a simular en la FPGA virtual
 

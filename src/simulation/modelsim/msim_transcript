@@ -12,29 +12,29 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/HP/Documents/GitHub/lab06-grupo_7/src {C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:37:57 on May 20,2020
+# Start time: 00:18:30 on May 21,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/HP/Documents/GitHub/lab06-grupo_7/src" C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v 
 # -- Compiling module BancoRegistro
 # 
 # Top level modules:
 # 	BancoRegistro
-# End time: 19:37:57 on May 20,2020, Elapsed time: 0:00:00
+# End time: 00:18:31 on May 21,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/HP/Documents/GitHub/lab06-grupo_7/src {C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/TestBench.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:37:57 on May 20,2020
+# Start time: 00:18:31 on May 21,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/HP/Documents/GitHub/lab06-grupo_7/src" C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/TestBench.v 
 # -- Compiling module TestBench
 # 
 # Top level modules:
 # 	TestBench
-# End time: 19:37:57 on May 20,2020, Elapsed time: 0:00:00
+# End time: 00:18:31 on May 21,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  TestBench
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" TestBench 
-# Start time: 19:37:57 on May 20,2020
+# Start time: 00:18:32 on May 21,2020
 # Loading work.TestBench
 # Loading work.BancoRegistro
 # ** Warning: (vsim-3015) C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/TestBench.v(17): [PCDPC] - Port size (8) does not match connection size (4) for port 'addrRa'. The port definition is at: C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v(7).
@@ -58,6 +58,5 @@
 # el valor de registro  5 =   x y 13 =  x
 # el valor de registro  6 =   x y 14 =  x
 # el valor de registro  7 =   x y 15 =  x
-force -freeze sim:/TestBench/addrW 00001 0
-# End time: 19:41:33 on May 20,2020, Elapsed time: 0:03:36
+# End time: 00:19:57 on May 21,2020, Elapsed time: 0:01:25
 # Errors: 0, Warnings: 3
