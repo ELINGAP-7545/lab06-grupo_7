@@ -47,12 +47,11 @@ Entregables:
 
 ## Código Banco de Registro
 
-module BancoRegistro (      	
-  
+```verilog
+module BancoRegistro (      	 
   
 //   #( Parametros
-         
-         
+                  
 parameter BIT_ADDR = 8,  //   BIT_ADDR Número de bit para la dirección
          
 parameter BIT_DATO = 4,  //  BIT_DATO  Número de bit para el dato
@@ -111,9 +110,12 @@ initial begin
 end
 
 endmodule
+```
 
 ## TestBench
 
+
+```verilog
 module TestBench;
 
 // Inputs
@@ -193,11 +195,12 @@ for (addrRa = 0; addrRa < 8; addrRa = addrRa + 1) begin
 $display("el valor de registro %d =  %d y %d = %d", addrRa,datOutRa,addrRb,datOutRb) ;
   
 end
-		
 	
 end
       
 endmodule
+
+```
 
 ## Simulación en Quartus 
 
