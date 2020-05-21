@@ -63,8 +63,7 @@ Principalmente se realiza la asignación para la cantidad de bits que tendrá ca
 
 ### Entradas, Salidas y Parametros
 
-Vamos a utilizar los 10 sw que trae la FPGA virtual por defecto utilizamos “V_SW” se utilizan los 9 bits [9:0], 2 botones de “V_BT” se utilizan dos bist [1:0] para asignarlos a Reg de escritura y el reset, como salidas pondremos dos displays “G_HEX0” es de 7 bits [6:0]y “G_HEX1” es de 7 bits [6:0], por último la entrada de reloj “G_CLOCK50”.
-
+Vamos a utilizar los 10 switches virtuales que trae la FPGA virtual por defecto, utilizando de “V_SW” los 9 bits [9:0], 2 botones de “V_BT” se utilizan dos bits [1:0] para asignarlos a Reg de escritura y el reset, como salidas utilizamos dos displays “G_HEX0” es de 7 bits [6:0] y “G_HEX1” es de 7 bits [6:0], por último la entrada de reloj “G_CLOCK50”.
 
 
 ```verilog
@@ -94,9 +93,9 @@ module BancoRegistro #(      		 //   #( Parametros
 
 ```
 
-### Asignación de Entradas y salidas dependiendo reg o wire
+### Asignación de Entradas y salidas dependiendo "reg" o "wire"
 
-Todas las asignaciones que hagamos a continuación se realizaran con wire ya que son conexiones de entrada a salida, creamos y asignamos de la siguiente manera:
+Todas las asignaciones que hagamos a continuación se realizaran con "wire" ya que son conexiones de entrada a salida, creamos y asignamos de la siguiente manera:
 
 Principalmente se realiza la asignación para la cantidad de bist que tendrá cada registro como se muestra en la siguiente tabla se asigna la distribución que se verá en la FPGA:
 Adaptación de código a LabsLand
