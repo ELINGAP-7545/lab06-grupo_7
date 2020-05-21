@@ -1,7 +1,8 @@
-`timescale 1ns / 1ps
 module BancoRegistro #(      		 //   #( Parametros
          parameter BIT_ADDR = 8,  //   BIT_ADDR Número de bit para la dirección
-         parameter BIT_DATO = 4  //  BIT_DATO  Número de bit para el dato
+         parameter BIT_DATO = 4,  //  BIT_DATO  Número de bit para el dato
+	      parameter   RegFILE= "src/Reg16.men")
+	
 	(
     input [BIT_ADDR-1:0] addrRa,
     input [BIT_ADDR-1:0] addrRb,
@@ -32,6 +33,9 @@ always @(posedge clk) begin
      breg[addrW] <= datW;
   end
 
+  initial begin
+	//$readmemh(RegFILE, breg);
+end
 
 endmodule
 

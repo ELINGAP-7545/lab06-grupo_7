@@ -12,14 +12,52 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/HP/Documents/GitHub/lab06-grupo_7/src {C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:19:39 on May 14,2020
+# Start time: 19:37:57 on May 20,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/HP/Documents/GitHub/lab06-grupo_7/src" C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v 
 # -- Compiling module BancoRegistro
-# ** Error: (vlog-13069) C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v(5): near "(": syntax error, unexpected '(', expecting ')'.
-# End time: 18:19:39 on May 14,2020, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: C:/Users/HP/Desktop/Intel/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./BancoRegistro_run_msim_rtl_verilog.do line 8
-# C:/Users/HP/Desktop/Intel/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -vlog01compat -work work +incdir+C:/Users/HP/Documents/GitHub/lab06-grupo_7/src {C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v}"
+# 
+# Top level modules:
+# 	BancoRegistro
+# End time: 19:37:57 on May 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/HP/Documents/GitHub/lab06-grupo_7/src {C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/TestBench.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:37:57 on May 20,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/HP/Documents/GitHub/lab06-grupo_7/src" C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/TestBench.v 
+# -- Compiling module TestBench
+# 
+# Top level modules:
+# 	TestBench
+# End time: 19:37:57 on May 20,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  TestBench
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" TestBench 
+# Start time: 19:37:57 on May 20,2020
+# Loading work.TestBench
+# Loading work.BancoRegistro
+# ** Warning: (vsim-3015) C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/TestBench.v(17): [PCDPC] - Port size (8) does not match connection size (4) for port 'addrRa'. The port definition is at: C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v(7).
+#    Time: 0 ps  Iteration: 0  Instance: /TestBench/uut File: C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v
+# ** Warning: (vsim-3015) C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/TestBench.v(17): [PCDPC] - Port size (8) does not match connection size (4) for port 'addrRb'. The port definition is at: C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /TestBench/uut File: C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v
+# ** Warning: (vsim-3015) C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/TestBench.v(17): [PCDPC] - Port size (9) does not match connection size (5) for port 'addrW'. The port definition is at: C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v(13).
+#    Time: 0 ps  Iteration: 0  Instance: /TestBench/uut File: C:/Users/HP/Documents/GitHub/lab06-grupo_7/src/bancoregistro.v
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# el valor de registro  0 =   x y  8 =  x
+# el valor de registro  1 =   x y  9 =  x
+# el valor de registro  2 =   x y 10 =  x
+# el valor de registro  3 =   x y 11 =  x
+# el valor de registro  4 =   x y 12 =  x
+# el valor de registro  5 =   x y 13 =  x
+# el valor de registro  6 =   x y 14 =  x
+# el valor de registro  7 =   x y 15 =  x
+force -freeze sim:/TestBench/addrW 00001 0
+# End time: 19:41:33 on May 20,2020, Elapsed time: 0:03:36
+# Errors: 0, Warnings: 3
