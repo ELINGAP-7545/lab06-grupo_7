@@ -52,21 +52,101 @@ Entregables:
 
 ## Código Banco de Registro
 
-```verilog
+module BancoRegistro (      		 //   #( Parametros
+         parameter BIT_ADDR = 8,  //   BIT_ADDR Número de bit para la dirección
+         parameter BIT_DATO = 4,  //  BIT_DATO  Número de bit para el dato
+	      parameter   RegFILE= "src/Reg16.men")
+	
+	(
+    input [BIT_ADDR-1:0] addrRa,
+    input [BIT_ADDR-1:0] addrRb,
+    
+	 output [BIT_DATO-1:0] datOutRa,
+    output [BIT_DATO-1:0] datOutRb,
+    
+	 input [BIT_ADDR:0] addrW,
+    input [BIT_DATO-1:0] datW,
+    
+	 input RegWrite,
+    input clk,
+    input rst
+    );
+
+// La cantdiad de registros es igual a: 
+localparam NREG = 2 ** BIT_ADDR;
+  
+//configiración del banco de registro 
+reg [BIT_DATO-1: 0] breg [NREG-1:0];
 
 
-```
+assign  datOutRa = breg[addrRa];
+assign  datOutRb = breg[addrRb];
+
+always @(posedge clk) begin
+	if (RegWrite == 1)
+     breg[addrW] <= datW;
+  end
+
+  initial begin
+	//$readmemh(RegFILE, breg);
+end
+
+endmodule
 
 ## TestBench
 
-```verilog
+module TestBench;
 
+	// Inputs
+	reg [3:0] addrRa;
+	reg [3:0] addrRb;
+	reg [4:0] addrW;
+	reg [3:0] datW;
+	reg RegWrite;
+	reg clk;
+	reg rst;
 
-```
+	// Outputs
+	wire [3:0] datOutRa;
+	wire [3:0] datOutRb;
+
+	// Instantiate the Unit Under Test (UUT)
+	BancoRegistro uut (
+		.addrRa(addrRa), 
+		.addrRb(addrRb), 
+		.datOutRa(datOutRa), 
+		.datOutRb(datOutRb), 
+		.addrW(addrW), 
+		.datW(datW), 
+		.RegWrite(RegWrite), 
+		.clk(clk), 
+		.rst(rst)
+	);
+
+	initial begin
+		// Initialize Inputs
+		addrRa = 0;
+		addrRb = 0;
+		addrW = 0;
+		datW = 0;
+		RegWrite = 0;
+		clk = 0;
+		rst = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+      for (addrRa = 0; addrRa < 8; addrRa = addrRa + 1) begin
+			#5 addrRb=addrRa+8;
+			 $display("el valor de registro %d =  %d y %d = %d", addrRa,datOutRa,addrRb,datOutRb) ;
+    end
+		
+	end
+      
+endmodule
 
 ## Simulación en Quartus 
 
-
+![Quartus](https://raw.githubusercontent.com/ELINGAP-7545/lab06-grupo_7/master/Img/Quartus.jpg)
 
 # Implementación en LabsLand
 
