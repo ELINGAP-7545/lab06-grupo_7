@@ -12,12 +12,7 @@ Fabian Santiago Martin Morantes - 60821
 
 # Introducción
 
-
-Para este paquete de trabajo, deben estar inscrito en un grupo y clonar la información del siguiente link [WP06](https://classroom.github.com/g/XHLhUCe3). Una vez aceptado el repositorio debe descargarlo en su computador, para ello debe clonar el mismo. Si no sabe cómo hacerlo revise la metodología de trabajo, donde se explica el proceso
-
-Las documentación deben estar diligencia en el archivo README.md del repositorio clonado.
-
-Una vez clone el repositorio, realice lo siguiente:
+El laboratorio que vamos a desarrollar comprende el diseño de un banco de registro basico, en el vamos a explicar el desarrollo y las configuraciones de los diversos interruptores y display asi como la configuracion de los registros.
 
 
 ## Descipción 
